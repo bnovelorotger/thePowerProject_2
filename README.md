@@ -59,6 +59,7 @@ El proyecto consistió en realizar un conjunto de consultas SQL sobre una base d
 
 ## 5. Archivos entregados
 
+- `ddl.sql`: Script con la definición del esquema de la base de datos (tablas, claves primarias y foráneas).
 - `consultas_entrega.sql`: Archivo con todas las consultas implementadas, comentadas y numeradas.
 - `README.md`: Este documento que recoge el proceso y análisis.
 
