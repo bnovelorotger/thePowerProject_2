@@ -1,4 +1,4 @@
--- CONSULTA 1: Crea el esquema de la BBDD. (En archivo adjunto "Esquema BBDD")
+-- CONSULTA 1: Crea el esquema de la BBDD. (En archivo adjunto "ddl.sql")
 
 -- CONSULTA 2: Muestra los nombres de todas las películas con una clasificación por edades de ‘R’.
 select title
