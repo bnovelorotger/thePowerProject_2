@@ -63,7 +63,7 @@ from film
 select amount
 from payment
 order by payment_date desc
-limit 1 offset 1
+limit 1 offset 2
 
 -- CONSULTA 12: Encuentra el título de las películas en la tabla “film” que no sean ni ‘NC17’ ni ‘G’ en cuanto a su clasificación.
 select title, rating
@@ -108,10 +108,11 @@ select distinct title
 from film
 
 -- CONSULTA 19:  Encuentra el título de las películas que son comedias y tienen una duración mayor a 180 minutos en la tabla “film”.
-select f.title, fc.category_id
+select f.title
 from film f
 join film_category fc on f.film_id = fc.film_id
-where fc.category_id = 5
+join category c on fc.category_id = c.category_id
+where c.name = 'Comedy' and f.length > 180;
 
 -- CONSULTA 20: Encuentra las categorías de películas que tienen un promedio de duración superior a 110 minutos y muestra el nombre de la categoría junto con el promedio de duración.
 select c.name, ROUND(AVG(f.length),2) as promedio_duracion
@@ -138,7 +139,7 @@ from rental
 group by DATE(rental_date)
 order by total_alquileres desc
 
--- CONSULTA 25: Encuentra las películas con una duración superior al promedio.
+-- CONSULTA 24: Encuentra las películas con una duración superior al promedio.
 select title, length 
 from film f 
 where length > (
@@ -487,3 +488,4 @@ from customer c
 left join rental r on c.customer_id = r.customer_id
 group by c.customer_id, c.first_name, c.last_name
 order by total_alquileres desc
+
